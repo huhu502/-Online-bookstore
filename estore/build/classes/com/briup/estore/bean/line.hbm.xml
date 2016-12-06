@@ -1,0 +1,16 @@
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+    
+<hibernate-mapping package="com.briup.estore.bean">
+	<class name="Line" table="e_line">
+		<id name="id" column="id">
+			<generator class="increment"></generator>
+		</id>
+		<property name="num"/>
+		
+		<many-to-one name="order" column="order_id" class="Order"></many-to-one>
+		<many-to-one name="book" column="book_id" class="Book"></many-to-one>
+		
+	</class>
+</hibernate-mapping>

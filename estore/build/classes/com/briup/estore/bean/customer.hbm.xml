@@ -1,0 +1,22 @@
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+    
+<hibernate-mapping package="com.briup.estore.bean">
+	<class name="Customer" table="e_customer">
+		<id name="id" column="id">
+			<generator class="increment"></generator>
+		</id>
+		<property name="name"/>
+		<property name="password"/>
+		<property name="zip"/>
+		<property name="address"/>
+		<property name="telephone"/>
+		<property name="email"/>
+		
+		<set name="orders">
+			<key column="customer_id"></key>
+			<one-to-many class="Order"/>
+		</set>
+	</class>
+</hibernate-mapping>
